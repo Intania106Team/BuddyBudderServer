@@ -1,0 +1,10 @@
+database:
+  name: postgres
+  user: postgres
+  host: db
+  port: 5432
+  password: postgres
+port: 5500
+jwt: jwtKey
+cipherkey: 6v9y$B&E)H@McQfTjWmZq4t7w!z%C*F-
+iv: 7E892875A52C59A3B588306B13C31FBD
