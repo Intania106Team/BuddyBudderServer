@@ -22,9 +22,9 @@ jobs:
         name: Login to Private Container Registry
         uses: docker/login-action@v2
         with:
-          registry: ${{ secrets.REGISTRY_HOST }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v4
@@ -34,3 +34,4 @@ jobs:
           push: true
           tags: |
             intania106team/buddybudder:latest
+            ghcr.io/intania106team/buddybudder:latest
