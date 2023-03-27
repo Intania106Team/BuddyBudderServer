@@ -33,4 +33,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/intania106team/buddybudder:latest
+            ghcr.io/Intania106Team/buddybudder:latest
