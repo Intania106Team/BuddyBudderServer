@@ -53,7 +53,7 @@ export class User {
   @Column({ type: 'varchar' })
   pinCode: string;
 
-  @Column({ type: 'int' })
+  @Column({ type: 'varchar' })
   chain: number;
 
   @Column({ default: true, type: 'boolean' })
