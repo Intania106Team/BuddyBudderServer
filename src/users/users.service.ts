@@ -89,7 +89,11 @@ export class UsersService {
           throw new BadRequestException();
         });
         const codename = budder ? budder.codename : undefined;
-        return { userId: user.budder, codename };
+        return {
+          userId: user.budder,
+          codename,
+          hint: budder ? budder.hint : undefined,
+        };
       })
       .catch((err) => {
         console.error(err);
@@ -121,6 +125,9 @@ export class UsersService {
           codename,
           group: buddy ? buddy.group : undefined,
           name: buddy ? buddy.name : undefined,
+          desire: buddy ? buddy.desire : undefined,
+          words: buddy ? buddy.words : undefined,
+          depart: buddy ? buddy.depart : undefined,
         };
       })
       .catch((err) => {

@@ -14,7 +14,7 @@ export class User {
   @Column({ type: 'char' })
   group: string;
 
-  @Column({ type: 'varchar' })
+  @Column({ type: 'varchar', nullable: true })
   key: string;
 
   @Column({ type: 'varchar' })
@@ -32,8 +32,17 @@ export class User {
   @Column({ type: 'text' })
   allergic: string;
 
-  @Column({ type: 'varchar', array: true })
+  @Column({ type: 'varchar', nullable: true, array: true })
   interests: string[];
+
+  @Column({ type: 'varchar', nullable: true })
+  ig: string;
+
+  @Column({ type: 'varchar', nullable: true })
+  line: string;
+
+  @Column({ type: 'varchar' })
+  depart: string;
 
   @Column({ type: 'uuid' })
   buddy: string;
@@ -43,6 +52,9 @@ export class User {
 
   @Column({ type: 'varchar' })
   pinCode: string;
+
+  @Column({ type: 'int' })
+  chain: number;
 
   @Column({ default: true, type: 'boolean' })
   isActive: boolean;
