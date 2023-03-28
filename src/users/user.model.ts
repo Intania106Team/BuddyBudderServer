@@ -11,7 +11,7 @@ export class User {
   @Column({ type: 'varchar' })
   name: string;
 
-  @Column({ type: 'char' })
+  @Column({ type: 'varchar' })
   group: string;
 
   @Column({ type: 'varchar', nullable: true })
