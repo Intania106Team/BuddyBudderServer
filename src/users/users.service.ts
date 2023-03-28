@@ -153,7 +153,7 @@ export class UsersService {
     const budder = await this.getBudderUserId(u);
     const buddy = await this.getBuddyUserId(u);
     return [
-      { ...budder, role: 'Buder' },
+      { ...budder, role: 'Budder' },
       { ...user, role: 'You', isYou: true },
       { ...buddy, role: 'Buddy' },
     ];

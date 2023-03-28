@@ -7,7 +7,11 @@ import {
 import { Server } from 'typeorm';
 import { ChatsService } from './chats.service';
 
-@WebSocketGateway(5501, { cors: { origin: '*' }, namespace: 'chats' })
+@WebSocketGateway(5501, {
+  cors: true,
+  transports: ['websocket'],
+  namespace: 'chats',
+})
 export class ChatsGateway {
   constructor(private readonly chatsService: ChatsService) {}
   @WebSocketServer() server: Server;
