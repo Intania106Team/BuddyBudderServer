@@ -93,7 +93,7 @@ export class UsersService {
           userId: user.budder,
           codename,
           hint: budder ? budder.hint : undefined,
-          interest: budder ? budder.interests : undefined,
+          interests: budder ? budder.interests : undefined,
         };
       })
       .catch((err) => {
@@ -129,7 +129,7 @@ export class UsersService {
           desire: buddy ? buddy.desire : undefined,
           words: buddy ? buddy.words : undefined,
           depart: buddy ? buddy.depart : undefined,
-          interest: buddy ? buddy.interests : undefined,
+          interests: buddy ? buddy.interests : undefined,
           allergic: buddy ? buddy.allergic : undefined,
         };
       })
