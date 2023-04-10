@@ -155,6 +155,7 @@ export class UsersService {
     const user = (await this.getUser(u)).user;
     const circle = await this.usersRepository.find({
       where: { chain: user.chain },
+      select: { hint: false },
     });
 
     return [
