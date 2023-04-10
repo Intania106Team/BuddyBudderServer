@@ -156,6 +156,10 @@ export class UsersService {
     const circle = await this.usersRepository.find({
       where: { chain: user.chain },
     });
-    return [...circle, { ...user, role: 'You', isYou: true }];
+
+    return [
+      ...circle.filter((u) => user.userId != u.userId),
+      { ...user, role: 'You', isYou: true },
+    ];
   }
 }
