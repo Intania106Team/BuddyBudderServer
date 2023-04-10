@@ -153,12 +153,9 @@ export class UsersService {
 
   async getAllProfiles(u: string) {
     const user = (await this.getUser(u)).user;
-    const budder = await this.getBudderUserId(u);
-    const buddy = await this.getBuddyUserId(u);
-    return [
-      { ...budder, role: 'Budder' },
-      { ...user, role: 'You', isYou: true },
-      { ...buddy, role: 'Buddy' },
-    ];
+    const circle = await this.usersRepository.find({
+      where: { chain: user.chain },
+    });
+    return [...circle, { ...user, role: 'You', isYou: true }];
   }
 }
