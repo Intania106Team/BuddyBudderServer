@@ -166,7 +166,7 @@ export class UsersService {
 
     return [
       ...circle.filter(
-        (u) => !(user.userId in [u.userId, budder.userId, buddy.userId]),
+        (u) => ![user.userId, budder.userId, buddy.userId].includes(u.userId),
       ),
       { ...user, role: 'You', isYou: true },
       { ...budder, role: 'Budder' },
